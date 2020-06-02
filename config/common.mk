@@ -166,6 +166,10 @@ PRODUCT_PACKAGES += \
     BlasterThemePicker \
     BlasterWalls
 
+# TouchGestures
+PRODUCT_PACKAGES += \
+    TouchGestures
+
 # Root
 PRODUCT_PACKAGES += \
     adb_root
