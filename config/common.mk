@@ -179,3 +179,6 @@ include vendor/aosp/config/branding.mk
 -include vendor/aosp-priv/keys/keys.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
+
+# Fonts
+include vendor/aosp/config/fonts.mk
