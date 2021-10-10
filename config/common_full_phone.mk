@@ -1,11 +1,20 @@
 # Inherit full common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full.mk)
+$(call inherit-product, vendor/aosp/config/common_full.mk)
 
-# Required packages
+# Sensitive Phone Numbers list
 PRODUCT_PACKAGES += \
-    LatinIME
+    sensitive_pn.xml
 
-# Include Lineage LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/dictionaries
+# World APN list
+PRODUCT_PACKAGES += \
+    apns-conf.xml
 
-$(call inherit-product, vendor/lineage/config/telephony.mk)
+# Telephony packages
+PRODUCT_PACKAGES += \
+    messaging \
+    Stk
+
+# Tethering - allow without requiring a provisioning app
+# (for devices that check this)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    net.tethering.noprovisioning=true
