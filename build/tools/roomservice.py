@@ -166,7 +166,7 @@ def is_in_manifest(projectpath):
 
     # ... and don't forget the lineage snippet
     try:
-        lm = ElementTree.parse(".repo/manifests/snippets/lineage.xml")
+        lm = ElementTree.parse(".repo/manifests/snippets/extras.xml")
         lm = lm.getroot()
     except:
         lm = ElementTree.Element("manifest")
