@@ -11,4 +11,6 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS +=  \
     vendor/aosp/overlay-gapps
 
 $(call inherit-product, vendor/aosp/config/rro_overlays.mk)
+else
+$(call inherit-product, packages/apps/Lawnchair/lawnchair.mk)
 endif
