@@ -1,18 +1,27 @@
 # Google Overlays
 PRODUCT_PACKAGES += \
-    CaptivePortalLoginOverlay \
-    CellBroadcastServiceOverlay \
-    GoogleConfigOverlay \
+    PixelDocumentsUIGoogleOverlay \
+    BuiltInPrintServiceOverlay \
     GooglePermissionControllerOverlay \
+    PixelConfigOverlayCommon \
+    TeleServiceOverlay \
+    CaptivePortalLoginOverlay \
     GoogleWebViewOverlay \
-    ManagedProvisioningPixelOverlay \
-    ManagedProvisioningPixelOverlay \
+    TelecomOverlay \
+    CellBroadcastServiceOverlay \
+    TelephonyProviderOverlay \
+    ContactsProviderOverlay \
     PixelConfigOverlay2018 \
+    TraceurOverlay \
     PixelConfigOverlay2019 \
     PixelConfigOverlay2019Midyear \
-    PixelConfigOverlayCommon \
-    PixelSetupWizardOverlayAosp \
-    PixelTetheringOverlay \
+    PixelConfigOverlay2021 \
+    PixelSetupWizardOverlay \
+    PixelSetupWizardOverlay2019 \
+    PixelSetupWizardOverlayActiveEdge \
+    PixelFwResOverlay \
+    GoogleConfigOverlay \
+    SystemUIGoogleOverlay \
     SettingsGoogleOverlayAosp
 
 ifeq ($(TARGET_INCLUDE_LIVE_WALLPAPERS),true)
