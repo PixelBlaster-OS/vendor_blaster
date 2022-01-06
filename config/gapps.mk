@@ -1,6 +1,6 @@
 # Gapps
 ifeq ($(USE_GAPPS),true)
-$(call inherit-product, vendor/gapps/config.mk)
+$(call inherit-product, vendor/gms/gms_full.mk)
 
 # Common Overlay
 DEVICE_PACKAGE_OVERLAYS += \
