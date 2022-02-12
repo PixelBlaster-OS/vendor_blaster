@@ -5,6 +5,19 @@ BLASTER_VERSION := 4.0
 TARGET_PRODUCT_SHORT := $(subst aosp_,,$(BLASTER_BUILD))
 ROM_FINGERPRINT := PixelBlaster/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(BLASTER_BUILD_DATE)
 
+BLASTER_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
+LIST := $(shell cat vendor/aosp/blaster_devices)
+
+ifeq ($(filter $(BLASTER_DEVICE), $(LIST)), $(BLASTER_DEVICE))
+    ifeq ($(filter-out Official OFFICIAL, $(BLASTER_BUILD_TYPE)),)
+        BLASTER_BUILD_TYPE := OFFICIAL
+    endif
+else
+    ifeq ($(filter-out Official OFFICIAL, $(BLASTER_BUILD_TYPE)),)
+        $(error "Device is not officially supported!")
+    endif
+endif
+
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     ro.pb.version=$(BLASTER_VERSION) \
