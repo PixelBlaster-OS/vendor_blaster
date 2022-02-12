@@ -1,6 +1,8 @@
 # Gapps
-ifeq ($(USE_GAPPS),true)
+ifeq ($(BUILD_GAPPS),Gapps)
 $(call inherit-product, vendor/gms/gms_full.mk)
+
+BLASTER_BUILD_VARIANT := Gapps
 
 # Common Overlay
 DEVICE_PACKAGE_OVERLAYS += \
@@ -13,4 +15,5 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS +=  \
 $(call inherit-product, vendor/aosp/config/rro_overlays.mk)
 else
 $(call inherit-product, packages/apps/Lawnchair/lawnchair.mk)
+BLASTER_BUILD_VARIANT := Vanilla
 endif

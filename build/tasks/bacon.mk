@@ -16,7 +16,7 @@
 # -----------------------------------------------------------------
 # PixelBlaster OTA update package
 
-BLASTER_TARGET_PACKAGE := $(PRODUCT_OUT)/PixelBlaster-$(BLASTER_VERSION)-$(BLASTER_BUILD)-$(BLASTER_BUILD_TYPE)-$(BLASTER_BUILD_DATE).zip
+BLASTER_TARGET_PACKAGE := $(PRODUCT_OUT)/PixelBlaster-$(BLASTER_VERSION)-$(BLASTER_BUILD)-$(BLASTER_BUILD_VARIANT)-$(BLASTER_BUILD_TYPE)-$(BLASTER_BUILD_DATE).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
