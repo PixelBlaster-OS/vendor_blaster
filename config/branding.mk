@@ -5,6 +5,8 @@ BLASTER_VERSION := 4.0
 TARGET_PRODUCT_SHORT := $(subst aosp_,,$(BLASTER_BUILD))
 ROM_FINGERPRINT := PixelBlaster/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(BLASTER_BUILD_DATE)
 
+PRODUCT_COPY_FILES += vendor/aosp/prebuilt/common/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
+
 BLASTER_DEVICE := $(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 LIST := $(shell cat vendor/aosp/blaster_devices)
 
