@@ -102,8 +102,11 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,vendor/blaster/prebuilt/fonts/,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
     vendor/blaster/prebuilt/common/etc/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
 
+$(call inherit-product, external/google-fonts/lato/fonts.mk)
+
 # Overlays
 PRODUCT_PACKAGES += \
+    FontGoogleSansLatoOverlay \
     FontInterOverlay \
     FontManropeOverlay \
     FontRobotoOverlay \
