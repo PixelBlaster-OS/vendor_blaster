@@ -104,9 +104,9 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    FontGoogleSansOverlay \
     FontInterOverlay \
     FontManropeOverlay \
+    FontRobotoOverlay \
     FontUrbanistOverlay
 
 # Themes
