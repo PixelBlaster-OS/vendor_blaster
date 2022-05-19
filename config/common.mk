@@ -107,6 +107,7 @@ $(call inherit-product, external/google-fonts/lato/fonts.mk)
 # Overlays
 PRODUCT_PACKAGES += \
     FontGoogleSansLatoOverlay \
+    FontHarmonySansOverlay \
     FontInterOverlay \
     FontManropeOverlay \
     FontRobotoOverlay \
