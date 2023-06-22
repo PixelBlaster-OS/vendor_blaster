@@ -59,7 +59,8 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 PRODUCT_COPY_FILES += \
-    vendor/blaster/prebuilt/common/etc/init/init.blaster-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.blaster-updater.rc
+    vendor/blaster/prebuilt/common/etc/init/init.blaster-updater.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/init.blaster-updater.rc \
+    vendor/blaster/config/permissions/privapp-permissions-blaster-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-blaster-product.xml
 
 # Config
 PRODUCT_PACKAGES += \
@@ -106,4 +107,5 @@ include vendor/blaster/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
+$(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 $(call inherit-product, vendor/blaster/config/telephony.mk)
