@@ -107,5 +107,12 @@ include vendor/blaster/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
+# Anything including updatable_apex.mk should have done so by now.
+ifeq ($(TARGET_FLATTEN_APEX), false)
+$(call inherit-product-if-exists, vendor/partner_modules/build/mainline_modules.mk)
+else
+$(call inherit-product-if-exists, vendor/partner_modules/build/mainline_modules_flatten_apex.mk)
+endif
+
 $(call inherit-product-if-exists, vendor/gms/products/gms.mk)
 $(call inherit-product, vendor/blaster/config/telephony.mk)
