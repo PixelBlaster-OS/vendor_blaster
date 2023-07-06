@@ -145,7 +145,7 @@ PRODUCT_PACKAGES += \
 
 # Themes
 PRODUCT_PACKAGES += \
-    ThemePicker
+    BlasterThemePicker
 
 # Root
 PRODUCT_PACKAGES += \
