@@ -6,5 +6,5 @@ endif
 
 # PixelBlaster System Version
 ADDITIONAL_SYSTEM_PROPERTIES += \
-    ro.blaster.version=$(BLASTER_VERSION) \
+    ro.blaster.version=$(BLASTER_BUILD_VERSION) \
 
