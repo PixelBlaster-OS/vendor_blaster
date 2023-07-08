@@ -104,7 +104,13 @@ fi
 if [ $BUILD_VARIANT ]; then
     BUILD_VARIANT=`echo $BUILD_VARIANT |  tr "[:upper:]" "[:lower:]"`
     if [ "${BUILD_VARIANT}" = "official" ]; then
-        export BLASTER_BUILDTYPE=OFFICIAL
+        DEVICE_LIST=`find vendor/blaster/products/ -name *.dependencies | sed -n 's/vendor\/blaster\/products\/\([^/]*\).dependencies/\1/p'`
+        if [[ ! $DEVICE_LIST =~ (^|[[:space:]])$DEVICE($|[[:space:]]) ]]; then
+            echo -e "${CLR_BLD_RED} Error! Your device is not officially supported.\n Please do an unofficial build.${CLR_RST}"
+            exit 1
+        else
+            export BLASTER_BUILDTYPE=OFFICIAL
+        fi
     elif [ "${BUILD_VARIANT}" = "unofficial" ]; then
         export BLASTER_BUILDTYPE=UNOFFICIAL
     else
