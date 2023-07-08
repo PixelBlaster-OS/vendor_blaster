@@ -168,6 +168,8 @@ include vendor/blaster/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
+include vendor/blaster/config/qcom.mk
+
 # GMS
 $(call inherit-product, vendor/blaster/config/gms.mk)
 $(call inherit-product, vendor/blaster/config/telephony.mk)
