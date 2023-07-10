@@ -31,6 +31,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
 endif
 
+ifeq ($(BLASTER_BUILDTYPE),OFFICIAL)
+PRODUCT_PACKAGES += \
+    Updater
+endif
+
 # Enable Android Beam on all targets
 PRODUCT_COPY_FILES += \
     vendor/blaster/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.nfc.beam.xml
