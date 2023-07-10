@@ -45,12 +45,13 @@ function showHelpAndExit {
         echo -e "${CLR_BLD_BLU}  -b, --backup-unsigned Store a copy of unsigned package along with signed${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -d, --delta           Generate a delta ota from the specified target_files zip${CLR_RST}"
         echo -e "${CLR_BLD_BLU}  -z, --imgzip          Generate fastboot flashable image zip from signed target_files${CLR_RST}"
+        echo -e "${CLR_BLD_BLU}  -u, --upload          Automatically upload release build and push OTA update${CLR_RST}"
         exit 1
 }
 
 # Setup getopt.
-long_opts="help,clean,installclean,repo-sync,variant:,build-type:,jobs:,module:,sign-keys:,pwfile:,backup-unsigned,delta:,imgzip:"
-getopt_cmd=$(getopt -o hcirv:t:j:m:s:p:bd:z: --long "$long_opts" \
+long_opts="help,clean,installclean,repo-sync,variant:,build-type:,jobs:,module:,sign-keys:,pwfile:,backup-unsigned,delta:,imgzip,upload"
+getopt_cmd=$(getopt -o hcirv:t:j:m:s:p:bd:zu --long "$long_opts" \
             -n $(basename $0) -- "$@") || \
             { echo -e "${CLR_BLD_RED}\nError: Getopt failed. Extra args\n${CLR_RST}"; showHelpAndExit; exit 1;}
 
@@ -71,6 +72,7 @@ while true; do
         -b|--backup-unsigned|b|backup-unsigned) FLAG_BACKUP_UNSIGNED=y;;
         -d|--delta|d|delta) DELTA_TARGET_FILES="$2"; shift;;
         -z|--imgzip|img|imgzip) FLAG_IMG_ZIP=y;;
+        -u|--upload|u|upload) UPLOAD=y;;
         --) shift; break;;
     esac
     shift
@@ -272,6 +274,16 @@ else
     echo "Package Complete: $OUT/PixelBlaster-$BLASTER_VERSION.zip"
 fi
 echo -e ""
+
+if [ $BUILD_VARIANT ]; then
+    BUILD_VARIANT=`echo $BUILD_VARIANT |  tr "[:upper:]" "[:lower:]"`
+if [ "${BUILD_VARIANT}" = "official" ]; then
+if [ ! -z "$UPLOAD" ]; then
+        echo -e "${CLR_BLD_GRN}Pushing OTA...${CLR_RST}"
+        ./ota.sh $DEVICE PixelBlaster-$BLASTER_VERSION.zip
+fi
+fi
+fi
 
 # Check the finishing time
 TIME_END=$(date +%s.%N)
