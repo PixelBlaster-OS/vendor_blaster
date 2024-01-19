@@ -49,8 +49,8 @@
     },
     {
         "remote":       "aosp",
-        "repository":   "device/google/lynx-sepolicy",
-        "target_path":  "device/google/lynx-sepolicy",
+        "repository":   "device/google/pantah-sepolicy",
+        "target_path":  "device/google/pantah-sepolicy",
         "revision":     "refs/tags/android-14.0.0_r21"
     },
     {
@@ -97,8 +97,8 @@
     },
     {
         "remote":       "aosp",
-        "repository":   "platform/hardware/qcom/wlan",
-        "target_path":  "hardware/qcom/wlan",
+        "repository":   "platform/hardware/broadcom/wlan",
+        "target_path":  "hardware/broadcom/wlan",
         "revision":     "refs/tags/android-14.0.0_r21"
     },
     {
