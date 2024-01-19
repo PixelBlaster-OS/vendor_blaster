@@ -190,10 +190,13 @@
 
     <!-- Build properties from a GMS certified device against current platform SPL level -->
     <string-array name="config_certifiedBuildProperties" translatable="false">
-        <item>bullhead</item> <!-- Build.DEVICE -->
-        <item>bullhead</item>     <!-- Build.PRODUCT -->
-        <item>Nexus 5X</item>   <!-- Build.MODEL -->
-        <item>google/bullhead/bullhead:8.0.0/OPR6.170623.013/4283548:user/release-keys</item> <!-- Build.FINGERPRINT -->
+        <item>PRODUCT:bullhead</item>
+        <item>DEVICE:bullhead</item>
+        <item>MANUFACTURER:google</item>
+        <item>BRAND:google</item>
+        <item>MODEL:Nexus 5X</item>
+        <item>FINGERPRINT:google/bullhead/bullhead:8.0.0/OPR6.170623.013/4283548:user/release-keys</item>
+        <item>VERSION.SECURITY_PATCH:2017-08-05</item>
     </string-array>
 
     <!-- Define device configs on boot -->
