@@ -115,6 +115,7 @@ $(call inherit-product, external/google-fonts/lato/fonts.mk)
 
 # Overlays
 PRODUCT_PACKAGES += \
+    AndroidBlackThemeOverlay \
     BlasterImmersiveNavigationOverlay \
     FontGoogleSansLatoOverlay \
     FontHarmonySansOverlay \
