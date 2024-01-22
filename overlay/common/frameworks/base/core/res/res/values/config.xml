@@ -420,4 +420,8 @@
         <item>device_personalization_services/Echo_smartspace__smartspace_enable_daily_forecast=true</item>
         <item>device_personalization_services/Echo_smartspace__smartspace_enable_timely_reminder=true</item>
     </string-array>
+
+    <!-- Whether to spoof device as pixel for certain google apps, to
+         unlock pixel-exclusive features -->
+    <bool name="config_spoofGoogleApps">false</bool>
 </resources>
