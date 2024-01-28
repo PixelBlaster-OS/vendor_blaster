@@ -2,7 +2,7 @@
 # Automatic OTA Script
 # Copyright (C) 2023 PixelBlaster-OS
 
-VERSION="6.3"
+VERSION="6.4"
 DEVICE_NAME=$1
 ZIP_NAME=$2
 ID=$(md5sum $ZIP_NAME | awk '{print $1}')
